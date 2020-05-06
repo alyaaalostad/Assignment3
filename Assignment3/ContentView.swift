@@ -10,12 +10,48 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            List(mosques){ mosque in
+                NavigationLink (destination: DetailView(mosque: mosque)){
+                    MosqueRow(mosque: mosque)
+                }
+            }.navigationBarTitle("مساجد الكويت").foregroundColor(.black)
+        }.accentColor(.white)
+    }
+}
+
+
+struct MosqueRow: View {
+    var mosque: Mosque
+    var body: some View {
+        HStack(alignment: .center){
+            Image(mosque.name)
+                .resizable()
+                .scaledToFill()
+                .frame(width:100, height:100)
+                .clipShape(Circle())
+            
+            VStack(alignment: .leading){
+                Text(mosque.name)
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding()
+                Text(mosque.place)
+                    .font(.system(size: 20))
+                    .foregroundColor(.gray)
+                    .padding()
+                
+            }
+        }.padding(.vertical)
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group{
+            ContentView() .environment(\.colorScheme, .dark)
+        }
     }
 }
