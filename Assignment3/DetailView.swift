@@ -7,11 +7,18 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct DetailView: View {
+    @State var time : CGFloat =  0
+    @State var player : AVAudioPlayer!
     var mosque : Mosque
     var body: some View {
+        
         ZStack{
+            
+            
+            
             Image(mosque.name)
                 .resizable()
                 .scaledToFill()
@@ -30,11 +37,51 @@ struct DetailView: View {
             VStack(spacing:50){
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack{
+//                    VStack{
+//                    ZStack{
+//                        Capsule()
+//                            .fill(Color.gray)
+//                            .frame(height: 10)
+//                            .padding(10)
+//
+//                        Capsule()
+//                            .fill(Color.orange)
+//                            .frame(width:time , height: 10)
+//                                           .padding(10)
+//                    }
+                    
                     ForEach(mosque.people, id: \.self){ (people :String) in
+                        
+                        
+                        Button(action: {
+                            
+                            self.player.play()
+                            DispatchQueue.global(qos: .background).async {
+                                while true {
+                                
+                                
+                                
+                                let screenWidth = UIScreen.main.bounds.width - 20
+                                let currentTime = self.player.currentTime / self.player.duration
+                                let timeForLabel = CGFloat(currentTime) * screenWidth
+                               self.time = timeForLabel
+                            }
+                            }
+                      
+                            
+                        })
+                        {
                         Image(people).resizable()
+                            .renderingMode(.original)
                             .scaledToFit()
                             .frame(width: 200)
                             .clipShape(Circle())
+                        }
+                        
+                    }.onAppear {
+                        let url = Bundle.main.path(forResource: "audio", ofType: "mp3")
+                                              self.player = try!AVAudioPlayer(contentsOf: URL(fileURLWithPath: url!))
+                        
                         
                     }
                 }

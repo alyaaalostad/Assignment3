@@ -15,6 +15,7 @@
 		0133A42E24630E1600993D4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133A42C24630E1600993D4C /* LaunchScreen.storyboard */; };
 		0133A437246312D900993D4C /* Mosque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133A436246312D900993D4C /* Mosque.swift */; };
 		0133A43924632EA100993D4C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133A43824632EA100993D4C /* DetailView.swift */; };
+		0133A43B2463540E00993D4C /* audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0133A43A2463540E00993D4C /* audio.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0133A42F24630E1600993D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0133A436246312D900993D4C /* Mosque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mosque.swift; sourceTree = "<group>"; };
 		0133A43824632EA100993D4C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0133A43A2463540E00993D4C /* audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		0133A41524630E1300993D4C = {
 			isa = PBXGroup;
 			children = (
+				0133A43A2463540E00993D4C /* audio.mp3 */,
 				0133A42024630E1300993D4C /* Assignment3 */,
 				0133A41F24630E1300993D4C /* Products */,
 			);
@@ -147,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0133A43B2463540E00993D4C /* audio.mp3 in Resources */,
 				0133A42E24630E1600993D4C /* LaunchScreen.storyboard in Resources */,
 				0133A42B24630E1600993D4C /* Preview Assets.xcassets in Resources */,
 				0133A42824630E1600993D4C /* Assets.xcassets in Resources */,
